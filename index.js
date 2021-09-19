@@ -18,6 +18,14 @@ app.get("/uploaded",(req,res)=>{
     res.render('uploaded')
 })
 
+app.get("/loading",(req,res)=>{
+    res.render('loading')
+})
+
+app.post("/loading",(req,res)=>{
+    res.redirect('/loading')
+})
+
 app.post("/uploaded",(req,res)=>{
     res.redirect('/uploaded')
 })

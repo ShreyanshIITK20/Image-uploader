@@ -1,0 +1,17 @@
+<%- include('header') %> 
+
+<div class="uploading">
+    <P style="text-align: left;">Uploading...</P>
+    <div class="animated yt-loader"></div>
+    <form action="/uploaded" method="POST" >
+        <button type="submit" class="btn btn-primary dropbutton" style="display: none;"></button>
+    </form>
+</div>
+
+<script>
+    setTimeout(function() {
+        $('.dropbutton').trigger('click');
+    }, 4000);
+</script>
+    
+<%- include('footer') %>
