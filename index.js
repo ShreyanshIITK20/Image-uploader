@@ -11,11 +11,10 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get("/",(req,res)=>{
-    const num=4
     res.render('frontpage');
 });
 
-app.get("/uploaded",(req,res)=>{
+app.get("/uploaded",(req,res)=>{ 
     res.render('uploaded')
 })
 

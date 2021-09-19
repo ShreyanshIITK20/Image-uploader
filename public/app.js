@@ -1,10 +1,6 @@
-$('.filebutton').click(()=>{                                                //targeting button click to launch the hidden input 
-    $('#file_input').click()
-})
-
 const dropZone = document.querySelector('.imagecol')
-let image;
-let uploadedImage = $('#finalimage')
+const newImageUrl = localStorage.getItem("new-image")
+$('#finalimage').attr('src',newImageUrl)
 
 dropZone.addEventListener("dragover",(ev)=>{
     ev.preventDefault()
@@ -16,13 +12,7 @@ dropZone.addEventListener("dragleave",(ev)=>{
     dropZone.classList.remove("active")
 })
 
-dropZone.addEventListener("drop",(event)=>{
-    event.preventDefault();
-    console.log("dropped");
-    
-    image = event.dataTransfer.files[0]
-    console.log(image)
-
+function uploadImg(image){
     let filetype = image.type
     let validFiles = ["image/jpg","image/png","image/jpeg"]
 
@@ -31,11 +21,31 @@ dropZone.addEventListener("drop",(event)=>{
         let fileReader = new FileReader()
         fileReader.onload = ()=>{
             let url = fileReader.result;
-            console.log(url)
-            uploadedImage.attr('src',"images/image.svg")
+
+            if(localStorage.getItem("new-image")===url){
+                localStorage.clear()
+            } else{
+            localStorage.setItem("new-image",url)
+            $('.dropbutton').click()
+            }
         }
         fileReader.readAsDataURL(image)
     }
     else alert("Please upload only .jpg/.jpeg/.png files")
+}
+
+dropZone.addEventListener("drop",(event)=>{
+    event.preventDefault();
+    console.log("dropped");
+    
+    var image = event.dataTransfer.files[0]
+    uploadImg(image);
 })
+
+$('#file_input').change((ev)=>{
+    
+    var image = ev.target.files[0]
+    uploadImg(image)
+})
+
 
