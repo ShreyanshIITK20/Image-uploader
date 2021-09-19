@@ -11,11 +11,16 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get("/",(req,res)=>{
+    const num=4
     res.render('frontpage');
 });
 
 app.get("/uploaded",(req,res)=>{
     res.render('uploaded')
+})
+
+app.post("/uploaded",(req,res)=>{
+    res.redirect('/uploaded')
 })
 
 app.listen(3000,()=>{

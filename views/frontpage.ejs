@@ -8,8 +8,10 @@
     <p class="p2">Drag or drag your image here</p>
   </div>
   <p class="p2">Or</p>
-  <input type="file" id="file_input" style="display: none;">
-  <button type="button" class="btn btn-primary filebutton">Choose a file</button>
+  <form action="/uploaded" method="POST" >
+    <input type="file" id="file_input" style="display: none;">
+    <button type="submit" class="btn btn-primary filebutton">Choose a file</button>
+  </form>
 </div>
     
 <%- include('footer') %> 
