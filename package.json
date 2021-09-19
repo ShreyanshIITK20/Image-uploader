@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/ShreyanshIITK20/Image-uploader/issues"
   },
-  "homepage": "https://github.com/ShreyanshIITK20/Image-uploader#readme"
+  "homepage": "https://github.com/ShreyanshIITK20/Image-uploader#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
 }

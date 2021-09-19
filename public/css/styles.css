@@ -7,8 +7,8 @@ body {
     width: 400px;
     padding: 5%;
     top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(50%);
+    -ms-transform: translateY(-25%);
+    transform: translateY(25%);
     text-align: center;
     border-radius: 10px;
     box-shadow: 0px 0px 1em rgb(163, 162, 162);
@@ -29,4 +29,12 @@ button{
     margin: 25px;
     border-radius: 10px;
     border: 1px dashed rgb(114, 169, 250);
+}
+.imagecol.active{
+    border: 1px solid rgb(114, 169, 250);
+    background-color: rgb(222, 237, 248);
+}
+
+.check{
+    color: rgb(80, 160, 0);
 }
