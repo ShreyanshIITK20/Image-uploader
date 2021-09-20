@@ -48,4 +48,11 @@ $('#file_input').change((ev)=>{
     uploadImg(image)
 })
 
+var imageLink = $('#finalimage').attr('src')
+$('.linkbox .link').html(imageLink)
+$('.linkbox button').click(()=>{
+    console.log("clicked")
+    navigator.clipboard.writeText(imageLink);
+})
+
 
